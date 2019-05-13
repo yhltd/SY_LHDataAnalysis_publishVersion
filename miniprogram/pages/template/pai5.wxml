@@ -11,6 +11,7 @@
       {{item.text}}</view>
       
     </block>
-     
+       <view class="menu-item11" bindtap='shan5'>删除</view>
+     <view class="menu-item11" bindtap='qu5'>取消</view>
     </view>
 </template>

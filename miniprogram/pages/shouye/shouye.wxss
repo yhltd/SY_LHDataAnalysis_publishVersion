@@ -7,14 +7,14 @@
 
 .zhuang {
   width: 50%;
-  font-size: 50px;
+  font-size: 30px;
   color: red;
   text-align: center;
 }
 
 .xian {
   width: 50%;
-  font-size: 50px;
+  font-size: 30px;
   color: blue;
   text-align: center;
 }

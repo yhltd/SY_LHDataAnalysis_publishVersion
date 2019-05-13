@@ -1,26 +1,26 @@
 <import src="/pages/template/pai.wxml" />
-<template is="tabBar" data="{{tabBar,hiddenName}}" />
+<template is="tabBar" data="{{tabBar,hiddenName,qu1,shan1}}" />
 
 <import src="/pages/template/pai2.wxml" />
-<template is="tabBar2" data="{{tabBar,hiddenName2}}" />
+<template is="tabBar2" data="{{tabBar,hiddenName2,qu2,shan2}}" />
 
 <import src="/pages/template/pai3.wxml" />
-<template is="tabBar3" data="{{tabBar,hiddenName3}}" />
+<template is="tabBar3" data="{{tabBar,hiddenName3,qu3,shan3}}" />
 
 <import src="/pages/template/pai4.wxml" />
-<template is="tabBar4" data="{{tabBar,hiddenName4}}" />
+<template is="tabBar4" data="{{tabBar,hiddenName4,qu4,shan4}}" />
 
 <import src="/pages/template/pai5.wxml" />
-<template is="tabBar5" data="{{tabBar,hiddenName5}}" />
+<template is="tabBar5" data="{{tabBar,hiddenName5,qu5,shan5}}" />
 
 <import src="/pages/template/pai6.wxml" />
-<template is="tabBar6" data="{{tabBar,hiddenName6}}" />
+<template is="tabBar6" data="{{tabBar,hiddenName6,qu6,shan6}}" />
 <!-- 参数2={{idd7}} -->
 <import src="/pages/template/pai7.wxml" />
 <template is="tabBar7" data="{{tabBar,hiddenName7}}" />
 
 <!-- <view style="background-image: url('cloud://yhltd-lzok7.7968-yhltd-lzok7/SY_LHDataAnalysis/all.png'); min-height:100%; background-size: 100% 100%;"> -->
-<view style="background-image: url('https://7968-yhltd-lzok7-1259185633.tcb.qcloud.la/SY_LHDataAnalysis/all2.png?sign=2ec9b3e226ad8bdfe0b8803fa848e4de&t=1557303416'); min-height:98%; background-size: 100% 100%;">
+<view style="background-image: url('https://7968-yhltd-lzok7-1259185633.tcb.qcloud.la/SY_LHDataAnalysis/all2.png?sign=2ec9b3e226ad8bdfe0b8803fa848e4de&t=1557303416'); min-height:98%; background-size: 100% 100%;" >
   <!-- <view class="a123"> -->
 
 

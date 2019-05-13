@@ -1,5 +1,6 @@
 
 <template name="tabBar">    
+
   <view  class="tab-bar" hidden="{{hiddenName}}"  style=" {{tabBar.position=='top'? 'top: 0' : 'bottom: 0'}}; {{tabBar.borderStyle? (tabBar.position=='top'? 'border-bottom: solid 1px '+tabBar.borderStyle + ';' : 'border-top: solid 1px '+tabBar.borderStyle + ';') : ''}}"> 
  <block wx:for="{{tabBar.list}}"  wx:key=""  >    
       <!-- <view  bindtap='click' class='menu-item4' data-index="{{index}}" wx:if="{{item.iconPath !=null}}"> -->
@@ -11,6 +12,7 @@
       {{item.text}}</view>
       
     </block>
-     
+     <view class="menu-item11" bindtap='shan1'>删除</view>
+     <view class="menu-item11" bindtap='qu1'>取消</view>
     </view>
 </template>

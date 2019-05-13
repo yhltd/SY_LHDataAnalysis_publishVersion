@@ -129,6 +129,77 @@ Page({
       return value2 - value1;
     }
   },
+
+  
+  shan1:function(e){
+    this.setData({
+      id: 0,
+    idd: 0
+    })
+   
+  },
+  shan2:function(e){
+    this.setData({
+      id2: 0,
+      idd2: 0
+    })
+  },
+  shan3:function(e){
+    this.setData({
+      id3: 0,
+      idd3: 0
+    })
+  },
+  shan4:function(e){
+    this.setData({
+      id4: 0,
+      idd4: 0
+    })
+  },
+  shan5:function(e){
+    this.setData({
+      id5: 0,
+      idd5: 0
+    })
+  },
+  shan6: function (e) {
+    this.setData({
+      id6: 0,
+      idd6: 0
+    })
+  },
+  qu1: function (e) {
+    console.log("11")
+    var that=this
+    that.setData({
+      hiddenName: !this.data.hiddenName
+    })
+  },
+  qu2: function (e) {
+    this.setData({
+      hiddenName2: !this.data.hiddenName2
+    })
+  },
+  qu3: function (e) {
+    this.setData({
+      hiddenName3: !this.data.hiddenName3
+    })
+  },
+  qu4: function (e) {
+    this.setData({
+      hiddenName4: !this.data.hiddenName4
+    })
+  },
+  qu5: function (e) {
+    this.setData({
+      hiddenName5: !this.data.hiddenName5
+    })
+  },
+  qu6: function (e) {
+    this.setData({
+      hiddenName6: !this.data.hiddenName6
+    })
+  },
   clickMe: function(e) {
     var idd = e.target.id
     console.log(idd)
@@ -613,53 +684,59 @@ Page({
         console.log("庄家赢")
         shuju7 = "Z"
       }
-      if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
+      else if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
         if (zhuang3 > xian3) {
 
           console.log("庄家赢")
           shuju7 = "Z"
         }
 
-        if (zhuang3 < xian3) {
+        else if (zhuang3 < xian3) {
           console.log("闲家赢")
           shuju7 = "X"
         }
-        if (zhuang3 = xian3) {
+        else if (zhuang3 = xian3) {
           console.log("平局")
-          shuju7 = "X"
+          shuju7 = "P"
         }
       }
-    } else if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
+    } 
+    else if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
       console.log("闲家赢")
       shuju7 = "X"
-    } else if (zhuang1 + zhuang2 == xian1 + xian2 && zhuang3 == xian3) {
+    } 
+    else if (zhuang1 + zhuang2 == xian1 + xian2 && zhuang3 == xian3) {
       console.log("平局")
       shuju7 = "P"
     }
-    //  else if (zhuang3 > xian3) {
+    else {
+      if (zhuang3 > xian3) {
 
-    //   console.log("庄家赢")
-    //   shuju7 = "Z"
-    // } else if (zhuang3 < xian3) {
+      console.log("庄家赢")
+      shuju7 = "Z"
+    } 
+    else if (zhuang3 < xian3) {
 
-    //   console.log("闲家赢")
-    //   shuju7 = "X"
-    // } else if (zhuang3 == xian3) {
+      console.log("闲家赢")
+      shuju7 = "X"
+    } 
+    else if  (zhuang3 == xian3) {
 
+      console.log("平局")
+      shuju7 = "P"
+    }
+    }
+    //new
+    // else if (zhuang1 + zhuang2 + zhuang3 == xian1 + xian2 + xian3) {
     //   console.log("平局")
     //   shuju7 = "P"
+    // } else if (zhuang1 + zhuang2 + zhuang3 < xian1 + xian2 + xian3) {
+    //   console.log("平局")
+    //   shuju7 = "X"
+    // } else if (zhuang1 + zhuang2 + zhuang3 > xian1 + xian2 + xian3) {
+    //   console.log("平局")
+    //   shuju7 = "Z"
     // }
-    //new
-    else if (zhuang1 + zhuang2 + zhuang3 == xian1 + xian2 + xian3) {
-      console.log("平局")
-      shuju7 = "P"
-    } else if (zhuang1 + zhuang2 + zhuang3 < xian1 + xian2 + xian3) {
-      console.log("平局")
-      shuju7 = "X"
-    } else if (zhuang1 + zhuang2 + zhuang3 > xian1 + xian2 + xian3) {
-      console.log("平局")
-      shuju7 = "Z"
-    }
 
     db.collection('SY_LHDataAnalysis_shuju').add({
 

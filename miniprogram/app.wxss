@@ -38,6 +38,7 @@
   background-color: #b8b6b6;
   position: fixed;
   width: 100%;
+ height: 65%
 }
 
 /* 图*/
@@ -54,12 +55,22 @@
 
 .menu-item1 {
   text-align: center;
+  align-items: center;
   background-color: #fff;
   margin: 1% 1% 1% 1%;
   width: 23%;
+ font-size: 50px;
   border-radius: 5px;
 }
-
+.menu-item11 {
+  text-align: center;
+ align-items: center;
+  background-color: #fff;
+  margin: 1% 1% 1% 1%;
+  width: 23%;
+ font-size: 25px;
+  border-radius: 5px;
+}
 .img {
   width: 23px;
   height: 23px;
