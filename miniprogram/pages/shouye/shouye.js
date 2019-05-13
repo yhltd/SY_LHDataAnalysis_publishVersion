@@ -361,38 +361,42 @@ Page({
           }
 
           //参数1
-          console.log('that.data.id' + that.data.id)
-          console.log('that.data.id2' + that.data.id2)
-          console.log('that.data.id3' + that.data.id3)
-          console.log('that.data.id4' + that.data.id4)
-          console.log('that.data.id5' + that.data.id5)
-          console.log('that.data.id6' + that.data.id6)
+          console.log('that.data.id' + that.data.idd)
+          console.log('that.data.id2' + that.data.idd2)
+          console.log('that.data.id3' + that.data.idd3)
+          console.log('that.data.id4' + that.data.idd4)
+          console.log('that.data.id5' + that.data.idd5)
+          console.log('that.data.id6' + that.data.idd6)
+          if (that.data.id5 == null || that.data.id5 == "") {
+            that.data.id5 = "0"
+            that.data.id6 = "0"
+          }
           //新加逻辑筛选之前出现过的相同牌型的次数
           db.collection('SY_LHDataAnalysis_shuju').limit(MAX_LIMIT).where({
-              shuju1: parseInt(that.data.id),
-              shuju2: parseInt(that.data.id2),
-              shuju3: parseInt(that.data.id3),
-              shuju4: parseInt(that.data.id4),
-              shuju5: parseInt(that.data.id5),
-              shuju6: parseInt(that.data.id6)
+              shuju1: String(that.data.idd),
+              shuju2: String(that.data.idd2),
+              shuju3: String(that.data.idd3),
+              shuju4: String(that.data.idd4),
+              shuju5: String(that.data.idd5),
+              shuju6: String(that.data.idd6)
             })
             .get({
-
               success(res) {
                 listAll_canshu1.push(res.data)
-                listAll_canshu1[0].sort(that.compare("shuju8")); //排序
+                console.log(listAll_canshu1[0].length),
+                  listAll_canshu1[0].sort(that.compare("shuju8")); //排序
                 that.setData({
-
                     listAll_canshu1: listAll_canshu1[0],
                     // listAll: res.data
                   },
                   winup_time = listAll_canshu1.length,
 
-                  // console.log('winup_timefff:' +  winup_time),
+                  console.log(listAll_canshu1 ),
                   // console.log('listAll_canshu1内容', listAll_canshu1[0])
                 )
 
-                console.log('winup_time:' + winup_time)
+                console.log('winup_time:' + listAll_canshu1[0].length)
+                xianwin=1
                 // console.log("xianwin:" + String(xianwin))
                 if (xianwin == 0)
                   wintime = 50
@@ -400,8 +404,8 @@ Page({
                   var las = 0;
                   wintime = 50
                   // winup_time=1
-                  console.log('listAll_canshu1.length:' + listAll_canshu1.length)
-                  for (var i = 0; i < listAll_canshu1.length; i++) {
+                  console.log('listAll_canshu1.length:' + listAll_canshu1[0].length)
+                  for (var i = 0; i < listAll_canshu1[0].length; i++) {
                     wintime = wintime + parseFloat(that.data.Canshu_listAll[0].canshu)
                   }
 
@@ -462,6 +466,7 @@ Page({
                         }
                         // console.log("can2data=" + String(can2data))
                         // console.log(String(wintime) + '+' + String(can2data) + '=' + String(wintime + can2data))
+                        console.log("参数2=" + String(can2data))
                         showmsg = (wintime + can2data),
                           that.setData({
                             xianmsg: showmsg,
@@ -469,10 +474,10 @@ Page({
                           }),
                           //清空参数2
                           that.data.idd7 = '',
-                        console.log("X偏差：" + String(showmsg.toFixed(2)))
+                          console.log("X偏差：" + String(showmsg.toFixed(2)))
                         showToastAuto(that)
                         // 如果大于 150 清空历史数据
-                      
+
                         if (parseFloat(showmsg) > 150 || parseFloat(showmsg) < -150) {
                           cleardata(that)
                         }
@@ -563,10 +568,17 @@ Page({
 
   },
   btzhixing: function() {
+    var that = this;
     this.setData({
       loading: !this.data.loading
     })
     cleardata(that)
+    wx.showToast({
+      title: '执行成功',
+    })
+    that.setData({
+      loading: false
+    })
   },
   canshu2click: function() {
 
@@ -623,29 +635,42 @@ Page({
     } else if (zhuang1 + zhuang2 == xian1 + xian2 && zhuang3 == xian3) {
       console.log("平局")
       shuju7 = "P"
-    } else if (zhuang3 > xian3) {
+    }
+    //  else if (zhuang3 > xian3) {
 
-      console.log("庄家赢")
-      shuju7 = "Z"
-    } else if (zhuang3 < xian3) {
+    //   console.log("庄家赢")
+    //   shuju7 = "Z"
+    // } else if (zhuang3 < xian3) {
 
-      console.log("闲家赢")
-      shuju7 = "X"
-    } else if (zhuang3 == xian3) {
+    //   console.log("闲家赢")
+    //   shuju7 = "X"
+    // } else if (zhuang3 == xian3) {
 
+    //   console.log("平局")
+    //   shuju7 = "P"
+    // }
+    //new
+    else if (zhuang1 + zhuang2 + zhuang3 == xian1 + xian2 + xian3) {
       console.log("平局")
       shuju7 = "P"
+    } else if (zhuang1 + zhuang2 + zhuang3 < xian1 + xian2 + xian3) {
+      console.log("平局")
+      shuju7 = "X"
+    } else if (zhuang1 + zhuang2 + zhuang3 > xian1 + xian2 + xian3) {
+      console.log("平局")
+      shuju7 = "Z"
     }
+
     db.collection('SY_LHDataAnalysis_shuju').add({
 
       data: {
 
-        shuju1: that.data.idd,
-        shuju2: that.data.idd2,
-        shuju3: that.data.idd3,
-        shuju4: that.data.idd4,
-        shuju5: that.data.idd5,
-        shuju6: that.data.idd6,
+        shuju1: String(that.data.idd),
+        shuju2: String(that.data.idd2),
+        shuju3: String(that.data.idd3),
+        shuju4: String(that.data.idd4),
+        shuju5: String(that.data.idd5),
+        shuju6: String(that.data.idd6),
         shuju7: shuju7,
         shuju8: parseFloat(String(time).replace("-", "").replace("-", "")),
         // _openid: 'oPTYg5dSDjYZ2mMdytcw_R8yq3PI1',
@@ -661,6 +686,7 @@ Page({
         wx.showToast({
           title: '录入成功',
         })
+        this.jisuan()
       }
     })
     this.qingkong()

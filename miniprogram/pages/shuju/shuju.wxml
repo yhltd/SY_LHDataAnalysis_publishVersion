@@ -3,7 +3,14 @@
 <!-- <view class='backimage'> -->
 <!-- <view class="a123"> -->
 <view class="lishi">历史数据：</view>
+<navigator class="shouye_nv" url='/pages/shouye/shouye' open-type="switchTab" hover-class="other-navigator-hover">
 
+  <text class="nav-mainitem-text">返回主页</text>
+ 
+</navigator>
+<view>
+ <text > \n</text>
+ </view> 
 <!-- <view class="container">
 <!-- 分割线 -->
 <!-- <view class="divLine"></view>
