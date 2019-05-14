@@ -8,7 +8,7 @@
       </view>  -->
 
     
-      <view class="menu-item1" bindtap='click' wx:if="{{item.text !=null}}"data-id="{{item.id}}"  id="{{item.idd}}">
+      <view class="menu-item1" bindtap='click1' wx:if="{{item.text !=null}}"data-id="{{item.id}}"  id="{{item.idd}}">
       {{item.text}}</view>
       
     </block>

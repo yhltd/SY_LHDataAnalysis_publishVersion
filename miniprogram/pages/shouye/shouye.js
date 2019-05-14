@@ -108,6 +108,11 @@ Page({
     id5: 0,
     id6: 0,
     id7: 0,
+    n1: 1,
+    n2: 2,
+    n3: 3,
+    n4: 4,
+    index: 0,
     listAll: [],
     msg: '',
     xianmsg: 0,
@@ -130,74 +135,158 @@ Page({
     }
   },
 
-  
-  shan1:function(e){
-    this.setData({
-      id: 0,
-    idd: 0
-    })
-   
+
+  shan1: function(e) {
+    var that = this
+    if (that.data.n1 == 0) {
+      that.setData({
+        id: 0,
+        idd: 0
+      })
+    }
   },
-  shan2:function(e){
-    this.setData({
-      id2: 0,
-      idd2: 0
-    })
+  shan2: function(e) {
+    var that = this
+
+    if (that.data.n2 == 1) {
+      that.setData({
+        id: 0,
+        idd: 0,
+        n2: 0
+      })
+    } else if (that.data.n2 == 2) {
+      that.setData({
+        id2: 0,
+        idd2: 0,
+        n2: 1
+      })
+
+    }
+
+    //  that.eval("idd" + that.data.n2)()
+
+    var ddd = "clickMe" + String(that.data.n2)
+    console.log(ddd)
+    if (ddd = 'clickMe1') {
+      console.log('dddfds')
+      hiddenName2: true
+      hiddenName: false
+      // this.clickMe2()
+      console.log('dddfdsend')
+    }
+    // that.ddd()
+    //  var ddd='idd'+'4'
+    // console.log(ddd)
+
+
   },
-  shan3:function(e){
-    this.setData({
-      id3: 0,
-      idd3: 0
-    })
+  shan3: function(e) {
+    var that = this
+    if (that.data.n3 == 1) {
+      that.setData({
+        id: 0,
+        idd: 0,
+        n3: 0
+      })
+    } else if (that.data.n3 == 2) {
+      that.setData({
+        id2: 0,
+        idd2: 0,
+        n3: 1
+      })
+    } else if (that.data.n3 == 3) {
+      that.setData({
+        id3: 0,
+        idd3: 0,
+        n3: 2
+      })
+    }
+
+    // that.eval("idd" + that.data.n3)()
+    var ddd = "clickMe" + String(that.data.n3)
+    console.log(ddd)
+    that.ddd()
   },
-  shan4:function(e){
-    this.setData({
-      id4: 0,
-      idd4: 0
-    })
+  shan4: function(e) {
+    var that = this
+    if (that.data.n4 == 1) {
+      that.setData({
+        id: 0,
+        idd: 0,
+        n4: 0
+      })
+    } else if (that.data.n4 == 2) {
+      that.setData({
+        id2: 0,
+        idd2: 0,
+        n4: 1
+      })
+    } else if (that.data.n4 == 3) {
+      that.setData({
+        id3: 0,
+        idd3: 0,
+        n4: 2
+      })
+    } else if (that.data.n4 == 4) {
+      that.setData({
+        id4: 0,
+        idd4: 0,
+        n4: 3
+      })
+    }
+    // that.eval("idd" + that.data.n4)()
+    var ddd = "clickMe" + String(that.data.n4)
+    console.log(ddd)
+    that.ddd()
   },
-  shan5:function(e){
+  shan5: function(e) {
     this.setData({
       id5: 0,
       idd5: 0
     })
   },
-  shan6: function (e) {
+  shan6: function(e) {
     this.setData({
       id6: 0,
       idd6: 0
     })
   },
-  qu1: function (e) {
+
+  qu1: function(e) {
     console.log("11")
-    var that=this
+    var that = this
     that.setData({
       hiddenName: !this.data.hiddenName
     })
   },
-  qu2: function (e) {
+  qu2: function(e) {
     this.setData({
       hiddenName2: !this.data.hiddenName2
     })
   },
-  qu3: function (e) {
+  qu3: function(e) {
     this.setData({
       hiddenName3: !this.data.hiddenName3
     })
   },
-  qu4: function (e) {
+  qu4: function(e) {
     this.setData({
       hiddenName4: !this.data.hiddenName4
     })
   },
-  qu5: function (e) {
+  qu5: function(e) {
     this.setData({
       hiddenName5: !this.data.hiddenName5
     })
   },
-  qu6: function (e) {
+  qu6: function(e) {
     this.setData({
       hiddenName6: !this.data.hiddenName6
+    })
+  },
+  qu7: function(e) {
+    this.setData({
+      hiddenName7: !this.data.hiddenName7
     })
   },
   clickMe: function(e) {
@@ -206,8 +295,9 @@ Page({
     this.setData({
       hiddenName: !this.data.hiddenName
     })
+
   },
-  click: function(e) {
+  click1: function(e) {
     var id = e.target.id
     var idd = e.target.dataset.id
     console.log(id)
@@ -216,6 +306,11 @@ Page({
       hiddenName: !this.data.hiddenName,
       id: id,
       idd: idd,
+      n1: 1,
+      n2: 2,
+      n3: 3,
+      n4: 4,
+      index: 1
     })
     this.clickMe2()
   },
@@ -234,6 +329,11 @@ Page({
       hiddenName2: !this.data.hiddenName2,
       id2: id2,
       idd2: idd2,
+      n1: 1,
+      n2: 2,
+      n3: 3,
+      n4: 4,
+      index: 2
     })
     this.clickMe3()
   },
@@ -250,7 +350,12 @@ Page({
     this.setData({
       hiddenName3: !this.data.hiddenName3,
       id3: id3,
-      idd3: idd3
+      idd3: idd3,
+      n1: 1,
+      n2: 2,
+      n3: 3,
+      n4: 4,
+      index: 3
     })
     this.clickMe4()
   },
@@ -267,7 +372,12 @@ Page({
     this.setData({
       hiddenName4: !this.data.hiddenName4,
       id4: id4,
-      idd4: idd4
+      idd4: idd4,
+      n1: 1,
+      n2: 2,
+      n3: 3,
+      n4: 4,
+      index: 4
     })
     // this.clickMe5()
   },
@@ -300,7 +410,8 @@ Page({
     this.setData({
       hiddenName5: !this.data.hiddenName5,
       id5: id5,
-      idd5: idd5
+      idd5: idd5,
+      n: 5
     })
     // this.clickMe6()
   },
@@ -332,7 +443,8 @@ Page({
     this.setData({
       hiddenName6: !this.data.hiddenName6,
       id6: id6,
-      idd6: idd6
+      idd6: idd6,
+      n: 6
     })
   },
   //参数2
@@ -345,7 +457,7 @@ Page({
   click7: function(e) {
     var id7 = e.target.id
     var idd7 = e.target.dataset.id
-    console.log(id7)
+    console.log(idd7)
     this.setData({
       hiddenName7: !this.data.hiddenName7,
       id7: id7,
@@ -462,12 +574,12 @@ Page({
                   },
                   winup_time = listAll_canshu1.length,
 
-                  console.log(listAll_canshu1 ),
+                  console.log(listAll_canshu1),
                   // console.log('listAll_canshu1内容', listAll_canshu1[0])
                 )
 
                 console.log('winup_time:' + listAll_canshu1[0].length)
-                xianwin=1
+                xianwin = 1
                 // console.log("xianwin:" + String(xianwin))
                 if (xianwin == 0)
                   wintime = 50
@@ -683,48 +795,39 @@ Page({
       if (xian1 + xian2 !== 8 || xian1 + xian2 !== 9) {
         console.log("庄家赢")
         shuju7 = "Z"
-      }
-      else if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
+      } else if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
         if (zhuang3 > xian3) {
 
           console.log("庄家赢")
           shuju7 = "Z"
-        }
-
-        else if (zhuang3 < xian3) {
+        } else if (zhuang3 < xian3) {
           console.log("闲家赢")
           shuju7 = "X"
-        }
-        else if (zhuang3 = xian3) {
+        } else if (zhuang3 = xian3) {
           console.log("平局")
           shuju7 = "P"
         }
       }
-    } 
-    else if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
+    } else if (xian1 + xian2 == 8 || xian1 + xian2 == 9) {
       console.log("闲家赢")
       shuju7 = "X"
-    } 
-    else if (zhuang1 + zhuang2 == xian1 + xian2 && zhuang3 == xian3) {
+    } else if (zhuang1 + zhuang2 == xian1 + xian2 && zhuang3 == xian3) {
       console.log("平局")
       shuju7 = "P"
-    }
-    else {
+    } else {
       if (zhuang3 > xian3) {
 
-      console.log("庄家赢")
-      shuju7 = "Z"
-    } 
-    else if (zhuang3 < xian3) {
+        console.log("庄家赢")
+        shuju7 = "Z"
+      } else if (zhuang3 < xian3) {
 
-      console.log("闲家赢")
-      shuju7 = "X"
-    } 
-    else if  (zhuang3 == xian3) {
+        console.log("闲家赢")
+        shuju7 = "X"
+      } else if (zhuang3 == xian3) {
 
-      console.log("平局")
-      shuju7 = "P"
-    }
+        console.log("平局")
+        shuju7 = "P"
+      }
     }
     //new
     // else if (zhuang1 + zhuang2 + zhuang3 == xian1 + xian2 + xian3) {
