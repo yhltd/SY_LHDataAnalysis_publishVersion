@@ -325,6 +325,7 @@ Page({
     var id2 = e.target.id
     var idd2 = e.target.dataset.id
     console.log(id2)
+    console.log(idd2)
     this.setData({
       hiddenName2: !this.data.hiddenName2,
       id2: id2,
@@ -390,7 +391,10 @@ Page({
   click5: function(e) {
     var id5 = e.target.id
     var idd5 = e.target.dataset.id
-    if (this.data.idd == 10 || this.data.idd2 == 10 || this.data.idd3 == 10 || this.data.idd4 == 10) {
+    // if (this.data.idd == 10 || this.data.idd2 == 10 || this.data.idd3 == 10 || this.data.idd4 == 10) 
+ 
+    if (parseInt(this.data.id) + parseInt(this.data.id2)-10 >= 8 || parseInt(this.data.id3) + parseInt(this.data.id4)-10>= 8) 
+    {
 
       wx.showModal({
         title: '警告！',
@@ -424,7 +428,9 @@ Page({
   click6: function(e) {
     var id6 = e.target.id
     var idd6 = e.target.dataset.id
-    if (this.data.idd == 10 || this.data.idd2 == 10 || this.data.idd3 == 10 || this.data.idd4 == 10) {
+    // if (this.data.idd == 10 || this.data.idd2 == 10 || this.data.idd3 == 10 || this.data.idd4 == 10)
+      if (parseInt(this.data.id) + parseInt(this.data.id2)-10 >= 8 || parseInt(this.data.id3) + parseInt(this.data.id4)-10 >= 8)
+     {
 
       wx.showModal({
         title: '警告！',
