@@ -1,2 +1,138 @@
-<!--miniprogram/pages/frmmanual_inputDian/frmmanual_inputDian.wxml-->
-<text>miniprogram/pages/frmmanual_inputDian/frmmanual_inputDian.wxml</text>
+<view style="background-image: url('https://7968-yhltd-lzok7-1259185633.tcb.qcloud.la/SY_LHDataAnalysis/calendar_single.png?sign=727127e0a9253250e5b4b51267f0ea1a&t=1558449731'); min-height:98%; background-size: 100% 100%;">
+  <text>\n</text>
+  <text>\n</text>
+   <text>\n</text>
+      <text>\n</text>
+  <view class='zhuangxian'>
+    <view class='zhuang'>
+      X
+
+      <view class="shenglv">1：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">2：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">3：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">4：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">5：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">6：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">7：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">8：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">9：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <!-- <view class="shenglv">0：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view> -->
+    </view>
+
+    <view class='he'>
+    
+    <text>\n</text>
+       <view class="shenglv">1：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">2：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">3：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">4：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">5：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">6：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">7：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">8：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">9：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+    </view>
+ <view class='he2'>
+    
+  H
+       <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv"> 
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+    </view>
+    <view class='xian'>
+      Z
+
+     <view class="shenglv">1：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">2：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">3：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">4：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">5：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">6：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">7：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">8：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      <view class="shenglv">9：
+        <view class='shenglv1'>{{zhuangmsg}}</view>
+      </view>
+      
+    </view>
+     
+  </view>
+</view>

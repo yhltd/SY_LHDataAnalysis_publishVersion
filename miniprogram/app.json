@@ -48,6 +48,12 @@
         "text": "数据"
       },
       {
+        "iconPath": "images/xinxi.png",
+        "selectedIconPath": "images/xinxilv.png",
+        "pagePath": "pages/frmmanual_inputDian/frmmanual_inputDian",
+        "text": "点数"
+      },
+      {
         "iconPath": "images/yonghu.png",
         "selectedIconPath": "images/yonghulv.png",
         "pagePath": "pages/shezhi/shezhi",
