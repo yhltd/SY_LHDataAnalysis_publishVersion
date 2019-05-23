@@ -1,3 +1,5 @@
+<import src="/pages/template/pai8.wxml" />
+<template is="tabBar8" data="{{tabBar,hiddenName8,qu8,shan8}}" />
 <view style="background-image: url('https://7968-yhltd-lzok7-1259185633.tcb.qcloud.la/SY_LHDataAnalysis/calendar_single.png?sign=727127e0a9253250e5b4b51267f0ea1a&t=1558449731'); min-height:98%; background-size: 100% 100%;">
   <text>\n</text>
   <text>\n</text>
@@ -8,7 +10,7 @@
       X
 
       <view class="shenglv">1：
-        <view class='shenglv1'>{{zhuangmsg}}</view>
+        <view class='shenglv1'  bindtap='clickMe8'>{{zhuangmsg}}</view>
       </view>
       <view class="shenglv">2：
         <view class='shenglv1'>{{zhuangmsg}}</view>
