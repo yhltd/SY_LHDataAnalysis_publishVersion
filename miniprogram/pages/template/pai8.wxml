@@ -1,7 +1,7 @@
 
 <template name="tabBar8">    
-  <view  class="tab-bar" hidden="{{hiddenName8}}"  style=" {{tabBar.position=='top'? 'top: 0' : 'bottom: 0'}}; {{tabBar.borderStyle? (tabBar.position=='top'? 'border-bottom: solid 1px '+tabBar.borderStyle + ';' : 'border-top: solid 1px '+tabBar.borderStyle + ';') : ''}}"> 
- <block wx:for="{{tabBar.list}}"  wx:key=""  >    
+  <view  class="tab-bar" hidden="{{hiddenName8}}"  style=" {{tabBar2.position=='top'? 'top: 0' : 'bottom: 0'}}; {{tabBar2.borderStyle? (tabBar2.position=='top'? 'border-bottom: solid 1px '+tabBar2.borderStyle + ';' : 'border-top: solid 1px '+tabBar2.borderStyle + ';') : ''}}"> 
+ <block wx:for="{{tabBar2.list}}"  wx:key=""  >    
       <!-- <view  bindtap='click' class='menu-item4' data-index="{{index}}" wx:if="{{item.iconPath !=null}}"> -->
       <!-- <image src="{{item.iconPath}}" class="img" id="{{item.id1}}"></image> 
       </view>  -->
@@ -11,7 +11,8 @@
       {{item.text}}</view>
       
     </block>
-       <view class="menu-item11" bindtap='shan2'>删除</view>
-     <view class="menu-item11" bindtap='qu2'>取消</view>
+       <view class="menu-item11" bindtap='shan'>清零</view>
+     <view class="menu-item11" bindtap='qu'>全清</view>
+     <view class="menu-item11" bindtap='jia'>+</view>
     </view>
 </template>

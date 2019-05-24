@@ -22,6 +22,80 @@ App({
     city: "",
     country: "",
     language: "",
+    tabBar2: {
+
+      "list": [
+      
+        {
+          id: "9",
+          idd: 9,
+          "text": "9",
+          "clas": "menu-item1",
+          active: false
+        },
+        {
+          id: "8",
+          idd: 8,
+          "text": "8",
+          "clas": "menu-item1",
+          active: false
+        },
+        {
+          id: "7",
+          idd: 7,
+          "text": "7",
+          "clas": "menu-item1",
+          active: false
+        },
+        {
+          id: "6",
+          idd: 6,
+          "text": "6",
+          "clas": "menu-item1",
+          active: false
+        },
+
+        {
+          
+          idd: 5,
+          "text": "5",
+          "clas": "menu-item1",
+          active: false
+        },
+        {
+          
+          idd: 4,
+          "text": "4",
+          "clas": "menu-item1",
+          active: false
+        },
+        {
+        
+          idd: 3,
+          "text": "3",
+          "clas": "menu-item1",
+          active: false
+        },
+        {
+         
+          idd: 2,
+          "text": "2",
+          "clas": "menu-item1",
+          active: false
+        },
+
+
+        {
+         
+          idd: 1,
+          "text": "1",
+          "clas": "menu-item1",
+          active: false
+        },
+  
+      ],
+      "position": "bottom",
+    },
     tabBar1: {
       
       "list": [
@@ -172,7 +246,7 @@ App({
   },
 
 
-  editTabBar: function () {
+  editTabBar2: function () {
     //使用getCurrentPages可以获取当前加载中所有的页面对象的一个数组，数组最后一个就是当前页面。
 
     var curPageArr = getCurrentPages();    //获取加载的页面
@@ -182,15 +256,15 @@ App({
       pagePath = '/' + pagePath;
     }
 
-    var tabBar = this.globalData.tabBar;
-    for (var i = 0; i < tabBar.list.length; i++) {
-      tabBar.list[i].active = false;
-      if (tabBar.list[i].pagePath == pagePath) {
-        tabBar.list[i].active = true;    //根据页面地址设置当前页面状态    
+    var tabBar2 = this.globalData.tabBar2;
+    for (var i = 0; i < tabBar2.list.length; i++) {
+      tabBar2.list[i].active = false;
+      if (tabBar2.list[i].pagePath == pagePath) {
+        tabBar2.list[i].active = true;    //根据页面地址设置当前页面状态    
       }
     }
     curPage.setData({
-      tabBar: tabBar
+      tabBar2: tabBar2
     });
   },
 
