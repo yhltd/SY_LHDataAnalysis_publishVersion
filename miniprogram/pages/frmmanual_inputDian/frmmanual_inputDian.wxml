@@ -8,7 +8,9 @@
   <view class='zhuangxian'>
     <view class='zhuang'>
       X
-
+<view class="shenglv">0：
+        <view class='shenglv1' data-index='0' bindtap='clickMe8'>{{zhuangmsg0}}</view>
+      </view>
       <view class="shenglv">1：
         <view class='shenglv1' data-index='1' bindtap='clickMe8'>{{zhuangmsg1}}</view>
       </view>
@@ -42,8 +44,10 @@
     </view>
 
     <view class='he'>
-    
-    <text>\n</text>
+     H
+    <view class="shenglv">0：
+        <view class='shenglv1' data-index='10' bindtap='clickMe8'>{{zhuangmsg10}}</view>
+      </view>
        <view class="shenglv">1：
         <view class='shenglv1' data-index='11' bindtap='clickMe8'>{{zhuangmsg11}}</view>
       </view>
@@ -73,8 +77,10 @@
       </view>
     </view>
  <view class='he2'>
-    
-  H
+    <text>\n</text>
+ <view class="shenglv"> 
+        <view class='shenglv1' data-index='20' bindtap='clickMe8'>{{zhuangmsg20}}</view>
+      </view>
        <view class="shenglv"> 
         <view class='shenglv1' data-index='21' bindtap='clickMe8'>{{zhuangmsg21}}</view>
       </view>
@@ -105,7 +111,10 @@
     </view>
     <view class='xian'>
       Z
-
+ <view class="shenglv">0：
+        <view class='shenglv1'data-index='30' bindtap='clickMe8'>{{zhuangmsg30}}
+      </view>
+ </view>
      <view class="shenglv">1：
         <view class='shenglv1'data-index='31' bindtap='clickMe8'>{{zhuangmsg31}}</view>
       </view>

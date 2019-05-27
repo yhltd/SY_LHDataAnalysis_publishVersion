@@ -71,6 +71,15 @@
  font-size: 25px;
   border-radius: 5px;
 }
+.menu-item12 {
+  text-align: center;
+ align-items: center;
+  background-color: #fff;
+  margin: 1% 1% 1% 1%;
+  width: 16%;
+ font-size: 25px;
+  border-radius: 5px;
+}
 .img {
   width: 23px;
   height: 23px;

@@ -11,8 +11,9 @@
       {{item.text}}</view>
       
     </block>
-       <view class="menu-item11" bindtap='shan'>清零</view>
-     <view class="menu-item11" bindtap='qu'>全清</view>
-     <view class="menu-item11" bindtap='jia'>+</view>
+       <view class="menu-item12" bindtap='shan'>清零</view>
+     <view class="menu-item12" bindtap='qu'>全清</view>
+     <view class="menu-item12" bindtap='jia'>+</view>
+      <view class="menu-item12" bindtap='bao'>保存</view>
     </view>
 </template>
