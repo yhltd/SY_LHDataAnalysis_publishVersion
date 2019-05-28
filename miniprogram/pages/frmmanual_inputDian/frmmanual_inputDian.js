@@ -19,24 +19,23 @@ Page({
    */
   onLoad: function (options) {
     var that=this
+    var finduser = app.globalData.finduser
     app.editTabBar2();
-    for (var i = 0; i < 40; i++) {
-      that.setData({
-        [`zhuangmsg${i}`]: 0
-
-      })
-      wx.setStorageSync(String('zhuangmsg' + i), 0)
-    }
+  
     const db = wx.cloud.database();
-    console.log(app.globalData.finduser)
+      console.log(finduser)
     db.collection('SY_LHDataAnalysis_gengxin').where({
 
-      finduser: app.globalData.finduser
+      finduser: finduser
     })
       .get({
         success: res => {
-          console.log(res.data._id)
-          db.collection('SY_LHDataAnalysis_gengxin').doc(res.data._id).get({
+          // console.log(app.globalData.finduser)
+          // console.log(res.data)
+          // console.log(res.data.finduser)
+          console.log(res.data[0]._id)
+          if (res.data[0]._id!=null ){
+          db.collection('SY_LHDataAnalysis_gengxin').doc(res.data[0]._id).get({
       success: res => {
        
         that.setData({
@@ -125,18 +124,19 @@ Page({
         wx.setStorageSync('zhuangmsg39', res.data.zhuangmsg39)
         wx.setStorageSync('zhuangmsg40', res.data.zhuangmsg40)
 
-      }})
-      },
-fail: err =>{
-  console.log(1)
- for(var i=0;i<40;i++){
-      that.setData({
-        [`zhuangmsg${i}`]: 0
+      }})}
+      else{
+            for (var i = 0; i < 40; i++) {
+              that.setData({
+                [`zhuangmsg${i}`]: 0
 
-      })
-      wx.setStorageSync(String('zhuangmsg' + i), 0)
-    }
-}
+              })
+              wx.setStorageSync(String('zhuangmsg' + i), 0)
+            }
+      }
+      },
+       
+
 
       })
   
@@ -239,11 +239,14 @@ fail: err =>{
   },
   qu:function(){
     var that = this
+    that.setData({
+      hiddenName8: !that.data.hiddenName8,
+    })
     var id = that.data.id
     for (var i = 0; i < 40; i++) {
       that.setData({
         [`zhuangmsg${i}`]: 0,
- hiddenName8: !that.data.hiddenName8,
+ 
       })
       wx.setStorageSync(String('zhuangmsg' + i), 0)
     }
@@ -255,7 +258,7 @@ fail: err =>{
   },
   jia:function(e){
     var that = this
-   
+    
     
     var id = that.data.id
     var jia1 = parseInt(wx.getStorageSync(String('zhuangmsg' + id))) + 1
@@ -271,8 +274,10 @@ fail: err =>{
     })
     wx.setStorageSync((String('zhuangmsg' + id)), jia1)
   },
+
   bao:function(){
     var that = this;
+    var finduser = app.globalData.finduser
     var zhuangmsg0 = wx.getStorageSync(String('zhuangmsg0'))
     var zhuangmsg1 = wx.getStorageSync(String('zhuangmsg1'))
     var zhuangmsg2 = wx.getStorageSync(String('zhuangmsg2'))
@@ -316,19 +321,20 @@ fail: err =>{
     var zhuangmsg40 = wx.getStorageSync(String('zhuangmsg40'))
     // console.log(app.globalData.finduser)
     
-  
+    
     const db = wx.cloud.database();
     db.collection('SY_LHDataAnalysis_gengxin').where({
 
-      finduser: app.globalData.finduser
+      finduser: finduser
     })
       .get({
 
 
         success: res => {
-    db.collection('SY_LHDataAnalysis_gengxin').doc(res.data._id).update({
+          if (res.data[0]._id != null) {
+            db.collection('SY_LHDataAnalysis_gengxin').doc(res.data[0]._id).update({
   data:{
-    finduser: app.globalData.finduser,
+    finduser: finduser,
     zhuangmsg0:zhuangmsg0,
     zhuangmsg1: zhuangmsg1,
     zhuangmsg2: zhuangmsg2,
@@ -375,66 +381,67 @@ fail: err =>{
 
   }
     
-  })
-        },
-        fail(err){
-          db.collection('SY_LHDataAnalysis_gengxin').add({
-            data: {
-              finduser: app.globalData.finduser,
-              zhuangmsg0: 0,
-              zhuangmsg1: 0,
-              zhuangmsg2: 0,
-              zhuangmsg3: 0,
-              zhuangmsg4: 0,
-              zhuangmsg5: 0,
-              zhuangmsg6: 0,
-              zhuangmsg7: 0,
-              zhuangmsg8: 0,
-              zhuangmsg9: 0,
-              zhuangmsg10: 0,
-              zhuangmsg11: 0,
-              zhuangmsg12: 0,
-              zhuangmsg13: 0,
-              zhuangmsg14: 0,
-              zhuangmsg15: 0,
-              zhuangmsg16: 0,
-              zhuangmsg17: 0,
-              zhuangmsg18: 0,
-              zhuangmsg19: 0,
-              zhuangmsg20: 0,
-              zhuangmsg21: 0,
-              zhuangmsg22: 0,
-              zhuangmsg23: 0,
-              zhuangmsg24: 0,
-              zhuangmsg25: 0,
-              zhuangmsg26: 0,
-              zhuangmsg27: 0,
-              zhuangmsg28: 0,
-              zhuangmsg29: 0,
-              zhuangmsg30: 0,
-              zhuangmsg31: 0,
-              zhuangmsg32: 0,
-              zhuangmsg33:0,
-              zhuangmsg34:0,
-              zhuangmsg35: 0,
-              zhuangmsg36: 0,
-              zhuangmsg37: 0 ,
-              zhuangmsg38: 0,
-              zhuangmsg39: 0,
-              zhuangmsg40: 0,
+  })}
+  else{
+            db.collection('SY_LHDataAnalysis_gengxin').add({
+              data: {
+                finduser: finduser,
+                zhuangmsg0: zhuangmsg0,
+                zhuangmsg1: zhuangmsg1,
+                zhuangmsg2: zhuangmsg2,
+                zhuangmsg3: zhuangmsg3,
+                zhuangmsg4: zhuangmsg4,
+                zhuangmsg5: zhuangmsg5,
+                zhuangmsg6: zhuangmsg6,
+                zhuangmsg7: zhuangmsg7,
+                zhuangmsg8: zhuangmsg8,
+                zhuangmsg9: zhuangmsg9,
+                zhuangmsg10: zhuangmsg10,
+                zhuangmsg11: zhuangmsg11,
+                zhuangmsg12: zhuangmsg12,
+                zhuangmsg13: zhuangmsg13,
+                zhuangmsg14: zhuangmsg14,
+                zhuangmsg15: zhuangmsg15,
+                zhuangmsg16: zhuangmsg16,
+                zhuangmsg17: zhuangmsg17,
+                zhuangmsg18: zhuangmsg18,
+                zhuangmsg19: zhuangmsg19,
+                zhuangmsg20: zhuangmsg20,
+                zhuangmsg21: zhuangmsg21,
+                zhuangmsg22: zhuangmsg22,
+                zhuangmsg23: zhuangmsg23,
+                zhuangmsg24: zhuangmsg24,
+                zhuangmsg25: zhuangmsg25,
+                zhuangmsg26: zhuangmsg26,
+                zhuangmsg27: zhuangmsg27,
+                zhuangmsg28: zhuangmsg28,
+                zhuangmsg29: zhuangmsg29,
+                zhuangmsg30: zhuangmsg30,
+                zhuangmsg31: zhuangmsg31,
+                zhuangmsg32: zhuangmsg32,
+                zhuangmsg33: zhuangmsg33,
+                zhuangmsg34: zhuangmsg34,
+                zhuangmsg35: zhuangmsg35,
+                zhuangmsg36: zhuangmsg36,
+                zhuangmsg37: zhuangmsg37,
+                zhuangmsg38: zhuangmsg38,
+                zhuangmsg39: zhuangmsg39,
+                zhuangmsg40: zhuangmsg40,
 
 
 
-            }
 
-          })
+              }
 
-
+            })
+  }
         }
+       
 
 
 
         })
+      
         
     this.setData({
       hiddenName8: !that.data.hiddenName8,
@@ -443,4 +450,5 @@ fail: err =>{
 
     })
   }
+    
 })
