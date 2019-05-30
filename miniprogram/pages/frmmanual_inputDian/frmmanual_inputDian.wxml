@@ -1,9 +1,10 @@
 <import src="/pages/template/pai8.wxml" />
 <template is="tabBar8" data="{{tabBar2,hiddenName8,qu8,shan8}}" />
-<view style="background-image: url('https://7968-yhltd-lzok7-1259185633.tcb.qcloud.la/SY_LHDataAnalysis/calendar_single.png?sign=727127e0a9253250e5b4b51267f0ea1a&t=1558449731'); min-height:98%; background-size: 100% 100%;" >
+<!-- <view style="background-image: url('https://7968-yhltd-lzok7-1259185633.tcb.qcloud.la/SY_LHDataAnalysis/calendar_single.png?sign=727127e0a9253250e5b4b51267f0ea1a&t=1558449731'); min-height:100%; background-size: 100% 100%;" > -->
+<view style="background-image: url('https://7968-yhltd-lzok7-1259185633.tcb.qcloud.la/SY_LHDataAnalysis/all2.png?sign=2ec9b3e226ad8bdfe0b8803fa848e4de&t=1557303416'); min-height:98%; background-size: 100% 100%;">
+  <!-- <text>\n</text>
   <text>\n</text>
-  <text>\n</text>
-   <text>\n</text>
+   <text>\n</text> -->
       <text>\n</text>
   <view class='zhuangxian'>
     <view class='zhuang'>

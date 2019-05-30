@@ -7,14 +7,14 @@
 }
 
 .zhuang {
-  width: 25%;
+  width: 29%;
   font-size: 30px;
   color: red;
   text-align: center;
 }
 
 .xian {
-  width: 25%;
+  width: 24%;
   font-size: 30px;
   color: blue;
   
@@ -36,7 +36,7 @@
 }
 .shenglv {
   font-size: 20px;
-  color: rgb(145, 99, 99);
+  color: rgb(255, 115, 0);
   height: 50px;
   display: flex;
   margin: 10px 0 0 10px;
@@ -128,9 +128,10 @@
 }
 
 .shenglv1 {
-  background-color: rgba(26, 26, 26, 0.397);
+  background-color: rgba(0, 0, 0, 0.397);
   width: 40px;
   height: 30px;
+  color: rgb(255, 115, 0);
 }
 
 page {

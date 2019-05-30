@@ -34,7 +34,15 @@ Page({
           // console.log(res.data)
           // console.log(res.data.finduser)
           console.log(res.data[0]._id)
+         
           if (res.data[0]._id!=null ){
+            db.collection('SY_LHDataAnalysis_gengxin').where({
+
+              _id: res.data[0]._id
+            })
+            .get({
+              success: res => {
+
           db.collection('SY_LHDataAnalysis_gengxin').doc(res.data[0]._id).get({
       success: res => {
        
@@ -124,7 +132,12 @@ Page({
         wx.setStorageSync('zhuangmsg39', res.data.zhuangmsg39)
         wx.setStorageSync('zhuangmsg40', res.data.zhuangmsg40)
 
-      }})}
+      }}
+      
+      
+      )
+              }})
+      }
       else{
             for (var i = 0; i < 40; i++) {
               that.setData({
@@ -165,7 +178,7 @@ Page({
        
    
     })
-    
+    this.bao()
   },
 
   /**
@@ -236,6 +249,7 @@ Page({
    id8: 0
 
     })
+    that.bao()
   },
   qu:function(){
     var that = this
@@ -250,11 +264,8 @@ Page({
       })
       wx.setStorageSync(String('zhuangmsg' + i), 0)
     }
-    // that.setData({
-     
-    //   [`zhuangmsg${id}`]: 0,
-    //   id8:0
-    // })
+    that.bao()
+   
   },
   jia:function(e){
     var that = this
@@ -273,6 +284,7 @@ Page({
 
     })
     wx.setStorageSync((String('zhuangmsg' + id)), jia1)
+    that.bao()
   },
 
   bao:function(){
@@ -328,10 +340,19 @@ Page({
       finduser: finduser
     })
       .get({
-
+         
 
         success: res => {
+         
+          db.collection('SY_LHDataAnalysis_gengxin').where({
+
+            _id: res.data[0]._id
+          })
+            .get({
+              success: res => {
+               
           if (res.data[0]._id != null) {
+            
             db.collection('SY_LHDataAnalysis_gengxin').doc(res.data[0]._id).update({
   data:{
     finduser: finduser,
@@ -381,7 +402,8 @@ Page({
 
   }
     
-  })}
+  })
+  }
   else{
             db.collection('SY_LHDataAnalysis_gengxin').add({
               data: {
@@ -444,11 +466,19 @@ Page({
       
         
     this.setData({
-      hiddenName8: !that.data.hiddenName8,
+      hiddenName8: true,
   
 
 
     })
+    wx.showToast({
+      title: '保存成功！',//提示文字
+     
+    })
+  
   }
     
 })
+}
+}
+)
